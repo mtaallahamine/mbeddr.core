@@ -163,3 +163,8 @@ publishing {
         }
     }
 }
+
+//mbeddr build is "master" also for maintenance branches
+//if(mbeddrBuild == "master") {
+    tasks.findByName("publishMbeddrPlatformPublicationToMavenRepository").dependsOn("publishMbeddrPlatformPublicationToGitHubPackagesRepository")
+//}
